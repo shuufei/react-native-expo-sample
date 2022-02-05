@@ -1,3 +1,4 @@
+import { DrawerActions } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Button, StyleSheet, Text, View } from "react-native";
 import { RootStackParamList } from '../types';
@@ -17,6 +18,9 @@ export const HomeScreen = (props: HomeScreenProps) => {
       }} />
       <Button title="Show Modal" onPress={() => {
         navigation.navigate('Modal')
+      }} />
+      <Button title="Show Drawer" onPress={() => {
+        navigation.dispatch(DrawerActions.openDrawer());
       }} />
     </View>
   )

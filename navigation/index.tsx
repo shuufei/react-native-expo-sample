@@ -58,9 +58,11 @@ const TabStackScreen = () => {
 function DrawerNavigator() {
   return (
     <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Group screenOptions={{headerShown: false}}>
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="One" component={TabOneScreen} />
       <Drawer.Screen name="Two" component={TabTwoScreen} />
+        </Drawer.Group>
     </Drawer.Navigator>
   );
 }
