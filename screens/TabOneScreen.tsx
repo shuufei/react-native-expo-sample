@@ -11,7 +11,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/TabOneScreen.tsx" />
       <Button title="Go to Home Page" onPress={() => {
-        navigation.replace('Home')
+        navigation.navigate('Home')
       }} />
     </View>
   );
