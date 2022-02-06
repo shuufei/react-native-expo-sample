@@ -3,12 +3,12 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import {
   Button,
   StyleSheet,
-  Text,
   View,
   ScrollView,
   SafeAreaView,
 } from "react-native";
 import { RootStackParamList } from "../types";
+import { Box, Text } from "native-base";
 
 type HomeScreenProps = NativeStackScreenProps<RootStackParamList, "Home">;
 
@@ -42,15 +42,17 @@ export const HomeScreen = (props: HomeScreenProps) => {
             navigation.dispatch(DrawerActions.openDrawer());
           }}
         />
-        <Text style={styles.text}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Text>
+        <Box p={6} background="blue.500" color="white">
+          <Text color="white" fontSize={42}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </Text>
+        </Box>
       </ScrollView>
     </SafeAreaView>
   );
@@ -63,8 +65,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   scrollView: {
+    width: "100%",
     backgroundColor: "pink",
-    width: '100%',
   },
   routerName: {
     fontSize: 14,
@@ -73,7 +75,4 @@ const styles = StyleSheet.create({
   button: {
     marginTop: "24px",
   },
-  text: {
-    fontSize: 42
-  }
 });
