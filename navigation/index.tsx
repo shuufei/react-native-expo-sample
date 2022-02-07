@@ -14,6 +14,7 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { ColorSchemeName } from "react-native";
+import { DigimonVSScreen } from "../screens/DigimonVSScreen";
 import { HomeScreen } from "../screens/HomeScreen";
 import ModalScreen from "../screens/ModalScreen";
 import TabOneScreen from "../screens/TabOneScreen";
@@ -58,11 +59,12 @@ const TabStackScreen = () => {
 function DrawerNavigator() {
   return (
     <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Group screenOptions={{headerShown: false}}>
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="One" component={TabOneScreen} />
-      <Drawer.Screen name="Two" component={TabTwoScreen} />
-        </Drawer.Group>
+      <Drawer.Group screenOptions={{ headerShown: false }}>
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="One" component={TabOneScreen} />
+        <Drawer.Screen name="Two" component={TabTwoScreen} />
+        <Drawer.Screen name="Digimon VS" component={DigimonVSScreen} />
+      </Drawer.Group>
     </Drawer.Navigator>
   );
 }
@@ -72,7 +74,11 @@ function RootNavigator() {
     <>
       <Stack.Navigator initialRouteName="Main">
         {/* <Stack.Screen name="TabStackScreen" component={TabStackScreen} /> */}
-        <Stack.Screen name="Main" component={DrawerNavigator} options={{headerShown: false}} />
+        <Stack.Screen
+          name="Main"
+          component={DrawerNavigator}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Modal"
           component={ModalScreen}
