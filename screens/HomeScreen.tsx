@@ -3,9 +3,9 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import {
   Button,
   StyleSheet,
-  View,
   ScrollView,
   SafeAreaView,
+  Image,
 } from "react-native";
 import { RootStackParamList } from "../types";
 import { Box, Text } from "native-base";
@@ -42,6 +42,9 @@ export const HomeScreen = (props: HomeScreenProps) => {
             navigation.dispatch(DrawerActions.openDrawer());
           }}
         />
+        <Box p={4} background="red.500">
+          <Image source={require("../assets/images/favicon.png")} />
+        </Box>
         <Box p={6} background="blue.500" color="white">
           <Text color="white" fontSize={42}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
